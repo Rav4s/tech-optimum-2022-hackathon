@@ -12,10 +12,10 @@ function App() {
     <div className="main">
       
     </div>
-      <div className="main">
-        <Router>
-        </Router>
-      </div>
+    <div className="main">
+      <Router>
+      </Router>
+    </div>
     </>
   );
 }
