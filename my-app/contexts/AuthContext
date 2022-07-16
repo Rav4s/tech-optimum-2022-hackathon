@@ -1,0 +1,18 @@
+import React from 'react';
+import { app, analytics, auth } from './firebase';
+import { StyledFirebaseAuth } from 'react-firebaseui';
+
+function AuthContext() {
+  const uiConfig = ({
+      signInFlow: 'popup',
+      signInOptions: [auth.GoogleAuthProvider.PROVIDER_ID, auth.EmailAuthProvider.PROVIDER_ID]
+  });
+
+  return (
+      <>
+          <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+      </>
+  );
+}
+
+export default AuthContext;
