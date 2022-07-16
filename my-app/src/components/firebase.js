@@ -53,7 +53,10 @@ const logInWithEmailAndPassword = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
-        console.error(err);
+        if (err.code == "auth/invalid-email") {
+            alert("Incorrect Password!");
+        }
+        console.error(err.code);
     }
 };
 
