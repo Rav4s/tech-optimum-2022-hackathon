@@ -28,9 +28,11 @@ function NavBar() {
   return (
     <>
       <div className='Navbar'>
-        <Navbar.Brand to='/' className='brand'>Nexus</Navbar.Brand>
+        <Link to='/'>
+          <Navbar.Brand to='/' className='brand'>Nexus</Navbar.Brand>
+        </Link>
         <div className='logo'>
-          <img src='NavLogo.png' alt='logo' />
+          <img className='logo-image' src='/img/NavLogo.png' alt='Nexus logo - world map' />
         </div>
         <div className='NavLinks'>
           <Link to='/about' className='link'>About</Link>
