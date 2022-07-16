@@ -11,7 +11,7 @@ import {
     signOut
 } from "firebase/auth";
 
-import { getFirestore, query, getDocs, collection, where, addDoc } from "firebase/firestore";
+import { getFirestore, query, getDocs, collection, where, addDoc} from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
