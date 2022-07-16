@@ -1,9 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import { app, analytics, auth } from './firebase';
-import {getDataByName, getCoordinates} from "./modules/countryData.js";
+import {getDataByName, getCoordinates, getCurrency, getLanguages, getCapitalCity, hasOceanAccess, getRegion, getFlagSVG} from "./modules/countryData.js";
 
-getCoordinates("peru").then((d) => {
+getFlagSVG("peru").then((d) => {
   console.log(d);
 });
 
