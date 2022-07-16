@@ -1,59 +1,40 @@
-import React, { useState } from "react"
-import AuthContext from "../contexts/AuthContext"
-import { app, analytics, auth } from './firebase';
-import { withRouter } from "react-router";
-import Router from './Router'
-
-function Dashboard(props) {
-
-  const [user, setUser] = useState(false);
-  const [busy, setBusy] = useState(true);
-
-  firebase.auth().onAuthStateChanged((firebaseUser) => {
-    if (firebaseUser) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      // ...
-      setUser(true);
-    } else {
-      // User is signed out
-      // ...
-      setUser(false);
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import "./Dashboard.css";
+import { auth, db, logout } from "./firebase";
+import { query, collection, getDocs, where } from "firebase/firestore";
+function Dashboard() {
+  const [user, loading, error] = useAuthState(auth);
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+  const fetchUserName = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      const data = doc.docs[0].data();
+      setName(data.name);
+    } catch (err) {
+      console.error(err);
+      alert("An error occured while fetching user data");
     }
-    setBusy(false);
-  });
-
-  const logout = () => {
-    firebase.auth().signOut().then(() => {
-      props.history.push({
-        pathname: "/"
-      });
-      window.location.reload();
-    });
-  }
-
+  };
+  useEffect(() => {
+    if (loading) return;
+    if (!user) return navigate("/");
+    fetchUserName();
+  }, [user, loading]);
   return (
-    <>
-
-      {user === false ?
-        <>
-          <div className="background">
-            <Loading></Loading>
-            <HeroTitleDescription></HeroTitleDescription>
-            <AuthContext></AuthContext>
-          </div>
-        </>
-        :
-        <>
-          <MainNavbar logout={logout}></MainNavbar>
-          <div className="overlay-container">
-            <SurveyNotif></SurveyNotif>
-            <Router />
-          </div>
-        </>}
-
-    </>
-  )
+    <div className="dashboard">
+       <div className="dashboard__container">
+        Logged in as
+         <div>{name}</div>
+         <div>{user?.email}</div>
+         <button className="dashboard__btn" onClick={logout}>
+          Logout
+         </button>
+       </div>
+     </div>
+  );
 }
-
-export default withRouter(Dashboard);
+export default Dashboard;
