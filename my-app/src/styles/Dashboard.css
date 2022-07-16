@@ -19,6 +19,13 @@
     border: none;
     color: white;
     background-color: black;
+    cursor: pointer;
+  }
+  .dashboard__btn:hover {
+    background-color: #655757;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
   }
   .dashboard div {
     margin-top: 7px;

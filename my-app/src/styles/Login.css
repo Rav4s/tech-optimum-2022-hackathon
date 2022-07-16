@@ -27,6 +27,7 @@
     transition-property: background-color;
     transition-duration: .3s;
     transition-timing-function: ease-in-out;
+    cursor: pointer;
   }
 
   .login__btn:hover {
@@ -57,5 +58,4 @@
     width: 100% !important;
     margin: auto;
     border: none;
-
   }
