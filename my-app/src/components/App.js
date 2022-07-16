@@ -4,7 +4,7 @@ import { app, analytics, auth } from './firebase';
 import {getDataByName, getCoordinates, getCurrency, getLanguages, getCapitalCity, hasOceanAccess, getRegion, getFlagSVG} from "../Modules/countryData.js";
 import Dashboard from './Dashboard';
 import Router from './Router';
-import NavBar from './components/Nav';
+import NavBar from './NavBar';
 
 function App() {
   return (

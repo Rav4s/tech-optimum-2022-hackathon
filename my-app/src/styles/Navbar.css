@@ -73,3 +73,12 @@
     top: 50%;
     color: #fff;
 }
+
+.white {
+    color: white;
+    text-decoration: none;
+}
+
+.white:visited {
+    color: white;
+}
