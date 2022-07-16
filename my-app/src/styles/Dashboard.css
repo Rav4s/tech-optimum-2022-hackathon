@@ -45,11 +45,11 @@
     top:0; bottom:0; right:0;
     width: 0%;
     background:white;
-    -moz-animation: showHide 2s ease-in; /* Firefox */
-    -webkit-animation: showHide 2s ease-in; /* Safari and Chrome */
-    -ms-animation: showHide 2s ease-in; /* IE10 */
-    -o-animation: showHide 2s ease-in; /* Opera */
-    animation: showHide 2s ease-in;
+    -moz-animation: showHide 1.5s ease-in; /* Firefox */
+    -webkit-animation: showHide 1.5s ease-in; /* Safari and Chrome */
+    -ms-animation: showHide 1.5s ease-in; /* IE10 */
+    -o-animation: showHide 1.5s ease-in; /* Opera */
+    animation: showHide 1.5s ease-in;
 }
 @-webkit-keyframes showHide { /* Chrome, Safari */
     0% {width: 100%}
@@ -70,4 +70,20 @@
 @keyframes showHide {
   0% {width: 100%}
   100% {width: 0%}
+}
+
+.column {
+  min-width: 100px;
+  flex: 1;
+}
+
+/* Clear floats after the columns */
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.column-header {
+  text-align: center;
 }
