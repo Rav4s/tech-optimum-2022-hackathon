@@ -24,9 +24,30 @@
     border: none;
     color: white;
     background-color: black;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
   }
+
+  .login__btn:hover {
+    background-color: #655757;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+  }
+
   .login__google {
     background-color: #4285f4;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .login__google:hover {
+    background-color: aquamarine;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
   }
   .login div {
     margin-top: 7px;
