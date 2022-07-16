@@ -3,10 +3,6 @@ import './App.css';
 import { app, analytics, auth } from './firebase';
 import {getDataByName, getCoordinates, getCurrency, getLanguages, getCapitalCity, hasOceanAccess, getRegion, getFlagSVG} from "./modules/countryData.js";
 
-getFlagSVG("peru").then((d) => {
-  console.log(d);
-});
-
 function App() {
   return (
     <>
