@@ -52,3 +52,10 @@
   .login div {
     margin-top: 7px;
   }
+  .centered-button {
+    text-align: center;
+    width: 100% !important;
+    margin: auto;
+    border: none;
+
+  }

@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "./Login.css";
+import GoogleButton from 'react-google-button'
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -38,9 +40,9 @@ function Login() {
         >
           Login
         </button>
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
-          Login with Google
-        </button>
+          <GoogleButton className="centered-button" onClick={signInWithGoogle}>
+            Login with Google
+          </GoogleButton>
         <div>
           <Link to="/reset">Forgot Password</Link>
         </div>
