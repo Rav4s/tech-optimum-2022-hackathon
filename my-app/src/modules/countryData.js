@@ -7,11 +7,25 @@ export async function getDataByName(countryName) {
     return data;
 }
 
+//returns array with lat and lng
 export async function getCoordinates(countryName) {
     const requestURL = URL + countryName;
     let response = await fetch(requestURL);
     let data = await response.json();
-    let json = JSON.parse(data);
-    console.log(json.latlng);
-    console.log(data[2]);
+    return data[0].latlng;
 }
+
+//returns a json object of all currencies given a country name
+export async function getCurrency(countryName) {
+    const requestURL = URL + countryName;
+    let response = await fetch(requestURL);
+    let data = await response.json();
+    return data[0].currencies;
+}
+
+//returns 
+export async function getLanguages(countryName) {
+
+}
+
+
