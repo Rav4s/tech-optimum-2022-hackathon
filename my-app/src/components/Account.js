@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import "../styles/Dashboard.css";
+import "../styles/Account.css";
 import { auth, db, logout } from "./firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
-function Dashboard() {
+
+function Account() {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
   const navigate = useNavigate();
@@ -26,11 +27,9 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div className="header">
-        <h1>Welcome back, {name.split(' ')[0]}!</h1>
-        <div className="fadingEffect"></div>
+        <h1>My Account</h1>
       </div>
       <div className="dashboard__container">
-        Logged in as
         <div>{name}</div>
         <div>{user?.email}</div>
         <button className="dashboard__btn" onClick={logout}>
@@ -40,4 +39,4 @@ function Dashboard() {
     </div>
   );
 }
-export default Dashboard;
+export default Account;

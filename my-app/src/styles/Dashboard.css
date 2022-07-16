@@ -2,8 +2,8 @@
     height: 100vh;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
   .dashboard__container {
     display: flex;
@@ -30,3 +30,44 @@
   .dashboard div {
     margin-top: 7px;
   }
+  .header {
+    display: block;
+    margin: 0;
+    padding: 2rem;
+    font-size: 1.25rem;
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+  }
+  
+.fadingEffect {
+    position:absolute;
+    top:0; bottom:0; right:0;
+    width: 0%;
+    background:white;
+    -moz-animation: showHide 2s ease-in; /* Firefox */
+    -webkit-animation: showHide 2s ease-in; /* Safari and Chrome */
+    -ms-animation: showHide 2s ease-in; /* IE10 */
+    -o-animation: showHide 2s ease-in; /* Opera */
+    animation: showHide 2s ease-in;
+}
+@-webkit-keyframes showHide { /* Chrome, Safari */
+    0% {width: 100%}
+    100% {width: 0%}
+}
+@-moz-keyframes showHide { /* FF */
+  0% {width: 100%}
+  100% {width: 0%}
+}
+@-ms-keyframes showHide { /* IE10 */
+  0% {width: 100%}
+  100% {width: 0%}
+}
+@-o-keyframes showHide { /* Opera */
+  0% {width: 100%}
+  100% {width: 0%}
+}
+@keyframes showHide {
+  0% {width: 100%}
+  100% {width: 0%}
+}

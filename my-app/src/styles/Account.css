@@ -1,0 +1,9 @@
+.header {
+    display: block;
+    margin: 0;
+    padding: 2rem;
+    font-size: 1.25rem;
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+  }
