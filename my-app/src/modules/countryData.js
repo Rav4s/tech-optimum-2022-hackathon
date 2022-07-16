@@ -28,4 +28,22 @@ export async function getLanguages(countryName) {
 
 }
 
+//returns an svg of the given country's flag
+export async function getFlagSVG(countryName) {
 
+}
+
+//returns a string of the capital city name
+export async function getCapitalCity(countryName) {
+
+}
+
+//returns the region name of the country
+export async function getRegion(countryName) {
+
+}
+
+//returns true if the given nation has access to the ocean
+export async function hasOceanAccess(countryName) {
+
+}
