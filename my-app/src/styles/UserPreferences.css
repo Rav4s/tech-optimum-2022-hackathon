@@ -18,3 +18,17 @@
     margin: 0 auto;
     text-align: center;
 }
+
+.prefs-label {
+    display: inline;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.prefs-item {
+    margin-bottom: 5px;
+}
+
+.space {
+    margin-bottom: 15px !important;
+}

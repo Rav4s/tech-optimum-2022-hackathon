@@ -74,7 +74,7 @@ export default function UserPreferences() {
         }
 
         fetchData();
-        
+
     }, []);
 
     function handleSubmit(e) {
@@ -94,9 +94,9 @@ export default function UserPreferences() {
                     <h1>User Preferences</h1>
                 </div>
                 <form onSubmit={handleSubmit}>
-                    <div>
+                    <div className="prefs-item">
                         <label>
-                            Budget Type:
+                            <h3 className="prefs-label">Budget Type:</h3>
                             <select value={budget} onChange={(e) => { setBudget(e.target.value) }}>
                                 {Object.keys(budgetTypes).map((i) => {
                                     return <option key={i} value={budgetTypes[i].val}>{i}</option>
@@ -104,9 +104,9 @@ export default function UserPreferences() {
                             </select>
                         </label>
                     </div>
-                    <div>
+                    <div className="prefs-item">
                         <label>
-                            Travel Type:
+                            <h3 className="prefs-label">Travel Type:</h3>
                             <select value={travelType} onChange={(e) => { setTravelType(e.target.value) }}>
                                 {Object.keys(travelTypes).map((i) => {
                                     return <option key={i} value={travelTypes[i].val}>{i}</option>
@@ -114,12 +114,14 @@ export default function UserPreferences() {
                             </select>
                         </label>
                     </div>
-                    <div>
+                    <div className="prefs-item">
                         <label for="categories">
-                            Categories Select:
+                            <div className="prefs-item">
+                                <h3 className="prefs-label">Select Categories:</h3>
+                            </div>
                             {Object.keys(categoryTypes).map((i) => {
                                 return (
-                                    <div>
+                                    <div className="prefs-item">
                                         {i}
                                         <input type="checkbox" id={i} name={i} value={categoryTypes[i].val} onChange={(e) => {
                                             if (e.target.checked) {
