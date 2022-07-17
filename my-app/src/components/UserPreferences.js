@@ -1,5 +1,6 @@
 import React from "react"
 import { updateUserPreferences } from "./firebase"
+import { Link } from "react-router-dom"
 const budgetTypes = {
     '$':{
         val: "low",
@@ -96,19 +97,11 @@ export default function UserPreferences(){
                                 }}/>
                             </div>)
                         })}
-                        {/* <select name="categories" id = "categories" onChange={(e)=>{
-                            console.log(e)
-                            setCategories(e.target.value)}} multiple>
-                            {Object.keys(categoryTypes).map((i)=>{
-                                console.log(i)
-                                console.log(categoryTypes[i].val);
-                                return <option key={i} value = {categoryTypes[i].val}>{i}</option>
-                            })}
-                        </select> */}
                     </label>
                 </div>
                 <input type="submit" value="Submit" />
             </form>
+            <Link to='/query'>Want to look for Destinations?</Link>
         </div>
     )
 }
