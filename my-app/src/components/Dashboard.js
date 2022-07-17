@@ -29,17 +29,6 @@ function Dashboard() {
         <h1>Welcome back, {name.split(' ')[0]}!</h1>
         <div className="fadingEffect"></div>
       </div>
-      <div class="row">
-        <div class="column">
-          <h2 className="column-header">Column1</h2>
-        </div>
-        <div class="column">
-          <h2 className="column-header">Column2</h2>
-        </div>
-        <div class="column">
-          <h2 className="column-header">Column3</h2>
-        </div>
-      </div>
     </div>
   );
 }
