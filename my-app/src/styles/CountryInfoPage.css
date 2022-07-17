@@ -6,8 +6,10 @@
     list-style-position: inside;
 
 }
-.input-area {
-
+.input-area input:hover {
+    outline: none;
+    border-color: #94ff5a;
+    box-shadow: 0 0 40px #f99e49;
 }
 
 .search-button {
