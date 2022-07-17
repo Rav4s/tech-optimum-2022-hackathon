@@ -104,6 +104,19 @@ const updateUserPreferences = async (preferences) => {
     }
 }
 
+const checkForPreferences = async () =>{
+    let user = auth.currentUser;
+    if(user){
+        const q = query(collection(db,'users'),where('uid','==',user.uid));
+        const qSnapshot = await getDocs(q);
+        qSnapshot.forEach(async (document)=>{
+            let Document = document.data()
+            return Document.travelType != null;
+        })
+    }
+    return false;
+}
+
 const logout = () => {
     signOut(auth);
   };
@@ -116,5 +129,6 @@ const logout = () => {
     registerWithEmailAndPassword,
     sendPasswordReset,
     logout,
-    updateUserPreferences
+    updateUserPreferences,
+    checkForPreferences
   };

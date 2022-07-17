@@ -1,6 +1,16 @@
 
 import { Link } from "react-router-dom"
+import { checkForPreferences } from "./firebase"
+
 export default function QueryPage(){
+
+    function handleOnClick(e){
+        checkForPreferences().then((d)=>{
+            if(!d){
+                alert("Update Preferences First")
+            }
+        })
+    }
     return(
         <div>
             <h1>
@@ -11,6 +21,12 @@ export default function QueryPage(){
                     Need to update preferences?
                 </Link>
             </h3>
+            <div>
+                <button onClick={handleOnClick}>
+                    Search
+                </button>
+            </div>
+            
         </div>
     )
 }
