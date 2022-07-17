@@ -4,7 +4,7 @@ import {getCapitalCity, getCoordinates, getCurrency, getLanguages, getRegion} fr
 import "../styles/CountryInfoPage.css";
 
 function CountryInfoPage(){
-    // let temp = [];
+    let temp = [];
     const [region, setRegion] = useState("");
     const [capitalCity, setCapitalCity] = useState("");
     const [countryName, setCountryName] = useState("");
@@ -25,6 +25,12 @@ function CountryInfoPage(){
             </div>
             <div className="search-button-container">
                 <button className="search-button" onClick={() => {
+                    temp = countryName.split(" ");
+                    for (let i = 0; i < temp.length; i++) {
+                        temp[i] = temp[i][0].toUpperCase() + temp[i].substr(1);
+                    }
+                    setCountryName(temp.join(' '));
+                    console.log(countryName);
                     // getCurrency("peru").then((d) => {
                     //     setCurrencies(d);
                     // });
@@ -56,7 +62,7 @@ function CountryInfoPage(){
                     <li>The capital city of <b>{countryName}</b> is: {capitalCity}</li>
                     <li><b>{countryName}</b> is located in the region of {region}</li>
                     <li>People in <b>{countryName}</b> speak {languages.map((lang) => (<span key={lang}>{lang}, </span>))}</li>
-                    <li><b>{countryName}</b>is located at latitude {coordinates[0]} and longitude {coordinates[1]}</li>
+                    <li><b>{countryName}</b> is located at latitude {coordinates[0]} and longitude {coordinates[1]}</li>
                 </ul>
             </div>
         </div>
