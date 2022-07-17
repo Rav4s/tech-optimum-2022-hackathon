@@ -1,11 +1,32 @@
-.everything {
+.header {
+    display: block;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.25rem;
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+    text-align: center;
+    width: fit-content;
+}
+
+/* .everything {
     align-items: center;
     margin: auto;
     text-align: center;
     width:100%;
     list-style-position: inside;
     justify-content: center;
+} */
+
+.input-area {
+    position:relative;
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+    overflow:hidden;
 }
+
 .input-area input:hover {
     outline: none;
     border-color: #94ff5a;
@@ -18,6 +39,7 @@
     transition-property: background-color, color;
     transition-duration: .3s;
     transition-timing-function: ease-in-out;
+    margin-left: 45%;
 }
 
 .search-button:hover {
@@ -31,11 +53,8 @@
 .list {
     list-style-position:inside;
     text-align: left;
+    margin-left: 40%;
 }
 
 .info-display-area {
-    display: flex;
-    border: 3px solid red;
-    width: 30%;
-    margin-left: 40%;
 }

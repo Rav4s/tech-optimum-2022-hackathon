@@ -13,6 +13,7 @@ function CountryInfoPage(){
     // const [currencies, setCurrencies] = useState("");
     return (
         <div className="everything">
+            <h1 className='header'>Get Info About a Country!</h1>
             <div className="input-area">
                 <input
                     type="text"
