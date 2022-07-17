@@ -27,3 +27,7 @@
 .desc p {
     margin: 0;
 }
+
+.citation {
+    font-size: smaller;
+}
