@@ -69,10 +69,11 @@ export default function UserPreferences() {
                     setTravelType(Document['travelType']);
                     setBudget(Document['budgetType']);
                     console.log(Document['categoryTypes']);
-                    for (var i = 0; i < Document['categoryTypes'].length; i++) {
-                        console.log(Document['categoryTypes'][i]);
-                        setCategories(Document['categoryTypes'][i]);
-                    }
+                    setCategories([...Document['categoryTypes']])
+                    // for (var i = 0; i < Document['categoryTypes'].length; i++) {
+                    //     console.log(Document['categoryTypes'][i]);
+                    //     setCategories(Document['categoryTypes'][i]);
+                    // }
                 })
             }
         }
@@ -124,6 +125,7 @@ export default function UserPreferences() {
                                 <h3 className="prefs-label">Select Categories:</h3>
                             </div>
                             {Object.keys(categoryTypes).map((i) => {
+                                let shouldRender = categories.indexOf(categoryTypes[i].val) > -1
                                 return (
                                     <div className="prefs-item">
                                         {i}
@@ -135,7 +137,9 @@ export default function UserPreferences() {
                                             } else {
                                                 setCategories(categories.filter(data => data != e.target.value))
                                             }
-                                        }} />
+                                        }} checked={
+                                                shouldRender
+                                            }/>
                                     </div>)
                             })}
                             {/* <select name="categories" id = "categories" onChange={(e)=>{
