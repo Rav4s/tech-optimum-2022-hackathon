@@ -19,7 +19,11 @@ function App() {
       const data = doc.docs[0].data();
       setName(data.name);
     } catch (err) {
-      console.error(err);
+      console.log(name.length);
+      if (name.length < 1) {
+       // window.location.reload();
+      }
+      console.error(err.code);
     }
   };
   useEffect(() => {
