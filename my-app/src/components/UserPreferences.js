@@ -28,7 +28,8 @@ export default function UserPreferences(){
     const [budget, setBudget] = React.useState("medium")
 
     function handleSubmit(e){
-
+        console.log([travelType, budget])
+        e.preventDefault();
     }
 
 
@@ -38,24 +39,24 @@ export default function UserPreferences(){
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>
-                        Budget Type?
+                        Budget Type:
                         <select value={budget} onChange={(e)=>{setBudget(e.target.value)}}>
                             {Object.keys(budgetTypes).map((i)=>{
                                 console.log(i)
                                 console.log(budgetTypes[i].val);
-                                return <option value = {budgetTypes[i].val}>{i}</option>
+                                return <option key={i} value = {budgetTypes[i].val}>{i}</option>
                             })}
                         </select>
                     </label>                   
                 </div>
                 <div>
                     <label>
-                        Travel Type?
+                        Travel Type:
                         <select value={travelType} onChange={(e)=>{setTravelType(e.target.value)}}>
                             {Object.keys(travelTypes).map((i)=>{
                                 console.log(i)
                                 console.log(travelTypes[i].val);
-                                return <option value = {travelTypes[i].val}>{i}</option>
+                                return <option key={i} value = {travelTypes[i].val}>{i}</option>
                             })}
                         </select>
                     </label>
