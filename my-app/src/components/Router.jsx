@@ -6,6 +6,8 @@ import Reset from "./Reset";
 import Dashboard from "./Dashboard";
 import Account from "./Account";
 import CountryInfoPage from "./CountryInfoPage";
+import About from "./About";
+import UserPreferences from "./UserPreferences";
 
 export default function Router() {
 
@@ -18,6 +20,8 @@ export default function Router() {
                 <Route exact path="/dashboard" element={<Dashboard />} />
                 <Route exact path="/account" element={<Account />} />
                 <Route exact path="/country-info" element={<CountryInfoPage />} />
+                <Route exact path="/about" element={<About />} />
+                <Route exact path="/query" element={<UserPreferences/>}/>
             </Routes>
         </>
     );
