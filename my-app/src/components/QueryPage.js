@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom"
 import { checkForPreferences, getPreferences } from "./firebase"
 import { autoSuggestPlace } from "../Modules/openMapTripAPI";
+import { getCoordinates } from "../Modules/countryData";
 import React from "react";
 import '../styles/QueryPage.css'
 export default function QueryPage(){
@@ -38,8 +39,8 @@ export default function QueryPage(){
                 categoryParam = d.categoryTypes[0]
             }
             navigator.geolocation.getCurrentPosition(function(pos){
-               
-                autoSuggestPlace(keyword,10000000,pos.coords.longitude,pos.coords.latitude,categoryParam).then(dat=>{
+                
+                autoSuggestPlace(keyword,range,pos.coords.longitude,pos.coords.latitude,categoryParam).then(dat=>{
                     if(dat.length > 0){
                         setList(
                             <dl className="list">
@@ -52,9 +53,30 @@ export default function QueryPage(){
                             </dl>
                         )
                     } else{
-                        setList(<h1>Nothing Found</h1>)
+                        setList(<h1>Nothing found, try increasing range.</h1>)
                     }
                     console.log(dat)
+                })
+            },function(){
+                alert("US default Coordinates being used")
+                getCoordinates("United States").then(coords =>{
+                    autoSuggestPlace(keyword,range,coords[1],coords[0],categoryParam).then(dat=>{
+                        if(dat.length > 0){
+                            setList(
+                                <dl className="list">
+                                    {dat.map(d=>{
+                                        return(<>
+                                        <dt className="list-item" style={{"font-weight": "bold"}}>{d.name} </dt>
+                                        <dd> - Longitude: {d.point.lon}, Latitude: {d.point.lat}</dd>
+                                        </>)
+                                    })}
+                                </dl>
+                            )
+                        } else{
+                            setList(<h1>Nothing found, try increasing range</h1>)
+                        }
+                        console.log(dat)
+                    })
                 })
             })
         })
