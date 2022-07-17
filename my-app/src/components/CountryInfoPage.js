@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react"; 
 import {getCapitalCity, getCoordinates, getCurrency, getLanguages, getRegion} from "../Modules/countryData";
+import "../styles/CountryInfoPage.css";
 
 function CountryInfoPage(){
     // let temp = [];
