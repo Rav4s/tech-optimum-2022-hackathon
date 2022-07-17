@@ -30,7 +30,7 @@ export default function QueryPage(){
                 return
             }
         })
-        setList(<h1>Loading...</h1>)
+        setList(<h1>Loading your results...</h1>)
         getPreferences().then(d=>{
             console.log(d)
             let categoryParam = ""
@@ -87,10 +87,11 @@ export default function QueryPage(){
     }
     return(
         <div className="query-container">
-            <div>
             <div className="header">
                 <h1>Search for Destinations!</h1>
             </div>
+            <div className="desc">
+                <p>We can help you find your perfect travel destination using your personal preferences! Our prediction algorithm will recommend locations you should visit around the world. Try it out now!</p>
             </div>
             
             <h3>

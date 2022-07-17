@@ -36,3 +36,14 @@
 .space {
     margin-bottom: 15px !important;
 }
+
+.desc {
+    width: 60%;
+    font-size: 1.3rem;
+    padding: 1.4rem;
+    margin: 0 auto !important;
+}
+
+.desc p {
+    margin: 0;
+}

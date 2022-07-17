@@ -53,8 +53,23 @@
 .list {
     list-style-position:inside;
     text-align: left;
-    margin-left: 40%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.desc {
+    width: 40%;
+    font-size: 1.3rem;
+    padding: 1.4rem;
+    margin: 0 auto !important;
+}
+
+.desc p {
+    margin: 0;
 }
 
 .info-display-area {
+    text-align: center;
+    margin: 0 auto !important;
+    padding: 0;
 }
