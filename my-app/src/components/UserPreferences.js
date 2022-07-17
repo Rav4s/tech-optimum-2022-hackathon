@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { updateUserPreferences } from "./firebase";
 import "../styles/UserPreferences.css";
+import {
+    GoogleAuthProvider,
+    getAuth,
+    signInWithPopup,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    sendPasswordResetEmail,
+    signOut
+} from "firebase/auth";
+
+import { getFirestore, query, getDocs, collection, where, addDoc, setDoc, doc } from "firebase/firestore";
+import { auth, db } from "./firebase";
 
 const budgetTypes = {
     '$': {
@@ -46,6 +58,25 @@ export default function UserPreferences() {
     const [budget, setBudget] = React.useState("medium")
     const [categories, setCategories] = React.useState([])
 
+    useEffect(() => {
+        const fetchData = async () => {
+            var user = auth.currentUser;
+            if (user) {
+                const q = query(collection(db, 'users'), where('uid', '==', user.uid));
+                const qSnapshot = await getDocs(q);
+                qSnapshot.forEach(async (document) => {
+                    let Document = document.data();
+                    setTravelType(Document['travelType']);
+                    setBudget(Document['budgetType']);
+                    setCategories(Document['categoryTypes']);
+                })
+            }
+        }
+
+        fetchData();
+        
+    }, []);
+
     function handleSubmit(e) {
         updateUserPreferences({
             travelType: travelType,
@@ -59,9 +90,9 @@ export default function UserPreferences() {
     return (
         <>
             <div className="prefs-container">
-            <div className="header">
-                <h1>User Preferences</h1>
-            </div>
+                <div className="header">
+                    <h1>User Preferences</h1>
+                </div>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label>
