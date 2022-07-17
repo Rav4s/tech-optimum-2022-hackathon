@@ -4,7 +4,7 @@ import {getCapitalCity, getCoordinates, getCurrency, getLanguages, getRegion} fr
 import "../styles/CountryInfoPage.css";
 
 function CountryInfoPage(){
-    // let temp = [];
+    let temp = [];
     const [region, setRegion] = useState("");
     const [capitalCity, setCapitalCity] = useState("");
     const [countryName, setCountryName] = useState("");
@@ -12,8 +12,13 @@ function CountryInfoPage(){
     const [coordinates, setCoordinates] = useState("");
     // const [currencies, setCurrencies] = useState("");
     return (
-        <div className="everything">
-            <h1 className='header'>Get Info About a Country!</h1>
+        <div className="dashboard">
+            <div className="header">
+                <h1>Get info about a country!</h1>
+            </div>
+            <div className="desc">
+                <p>Enter the name of any country in the world to learn more about its features and culture. This will be immensely useful when planning your trips!</p>
+            </div>
             <div className="input-area">
                 <input
                     type="text"
@@ -25,6 +30,12 @@ function CountryInfoPage(){
             </div>
             <div className="search-button-container">
                 <button className="search-button" onClick={() => {
+                    temp = countryName.split(" ");
+                    for (let i = 0; i < temp.length; i++) {
+                        temp[i] = temp[i][0].toUpperCase() + temp[i].substr(1);
+                    }
+                    setCountryName(temp.join(' '));
+                    console.log(countryName);
                     // getCurrency("peru").then((d) => {
                     //     setCurrencies(d);
                     // });
@@ -53,10 +64,10 @@ function CountryInfoPage(){
                     {/* <li>Currencies in {countryName}: {temp.map(curr => (
                         <li key={curr}>{curr}</li>
                     ))}</li> */}
-                    <li>The capital city of {countryName} is: {capitalCity}</li>
-                    <li>{countryName} is located in the region of {region}</li>
-                    <li>People in {countryName} speak {languages.map((lang) => (<span key={lang}>{lang}, </span>))}</li>
-                    <li>{countryName} is located at latitude {coordinates[0]} and longitude {coordinates[1]}</li>
+                    <li>The capital city of <b>{countryName}</b> is: {capitalCity}</li>
+                    <li><b>{countryName}</b> is located in the region of {region}</li>
+                    <li>People in <b>{countryName}</b> speak {languages.map((lang) => (<span key={lang}>{lang}, </span>))}</li>
+                    <li><b>{countryName}</b> is located at latitude {coordinates[0]} and longitude {coordinates[1]}</li>
                 </ul>
             </div>
         </div>

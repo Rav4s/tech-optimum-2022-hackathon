@@ -53,6 +53,8 @@ const categoryTypes = {
         val: 'historic'
     }
 }
+let x = new Date();
+let date = "";
 
 export default function UserPreferences() {
     const [travelType, setTravelType] = React.useState("air")
@@ -98,6 +100,9 @@ export default function UserPreferences() {
             <div className="prefs-container">
                 <div className="header">
                     <h1>User Preferences</h1>
+                </div>
+                <div className="desc">
+                    <p>This is where we get to know all about your travel preferences, in order to suggest the best destinations for you.</p>
                 </div>
                 <form onSubmit={handleSubmit}>
                     <div className="prefs-item">
@@ -154,8 +159,14 @@ export default function UserPreferences() {
                         </select> */}
                         </label>
                     </div>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Submit" onClick={() => {
+                        console.log("user prefs updates");
+                        x = new Date();
+                        date = x.getMonth()}}/>
                 </form>
+                <div className="user-pref-status">
+                    User preferences last updated on mm/dd/yyyy: {x.getMonth() + 1}/{x.getDate()}/{x.getFullYear()} at {x.getHours() + 1}: {x.getMinutes()}.{x.getSeconds()}
+                </div>
             </div>
         </>
     )
