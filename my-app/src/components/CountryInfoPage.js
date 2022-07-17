@@ -48,7 +48,7 @@ function CountryInfoPage(){
                 </button>
             </div>
             <div className="info-display-area">
-                <ul>
+                <ul className="list">
                     {/* <li>Currencies in {countryName}: {temp.map(curr => (
                         <li key={curr}>{curr}</li>
                     ))}</li> */}

@@ -7,7 +7,7 @@
     "indexes": "firestore.indexes.json"
   },
   "hosting": {
-    "site": "nexustravels",
+    "site": "techoptimumhackathon",
     "public": "build",
     "rewrites": [ {
       "source": "**",

@@ -4,7 +4,7 @@
     text-align: center;
     width:100%;
     list-style-position: inside;
-
+    justify-content: center;
 }
 .input-area input:hover {
     outline: none;
@@ -26,4 +26,16 @@
     transition-timing-function: ease-in-out;
     background-color:rgb(163, 81, 18);
     color:aliceblue;
+}
+
+.list {
+    list-style-position:inside;
+    text-align: left;
+}
+
+.info-display-area {
+    display: flex;
+    border: 3px solid red;
+    width: 30%;
+    margin-left: 40%;
 }
