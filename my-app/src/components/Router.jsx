@@ -5,6 +5,7 @@ import Register from "./Register";
 import Reset from "./Reset";
 import Dashboard from "./Dashboard";
 import Account from "./Account";
+import About from "./About";
 
 export default function Router() {
 
@@ -16,6 +17,7 @@ export default function Router() {
                 <Route exact path="/reset" element={<Reset />} />
                 <Route exact path="/dashboard" element={<Dashboard />} />
                 <Route exact path="/account" element={<Account />} />
+                <Route exact path="/about" element={<About />} />
             </Routes>
         </>
     );

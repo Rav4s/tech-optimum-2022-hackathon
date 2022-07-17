@@ -1,0 +1,29 @@
+.account-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: block;
+    margin: 0;
+    padding: 2rem;
+    padding-bottom: 0;
+    font-size: 1.25rem;
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+  }
+
+.desc {
+    width: 40%;
+    font-size: 1.3rem;
+    padding: 1.4rem;
+    margin: 0 !important;
+}
+
+.desc p {
+    margin: 0;
+}
