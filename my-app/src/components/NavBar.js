@@ -37,6 +37,7 @@ function NavBar() {
         <div className='NavLinks'>
           <Link to='/about' className='link'>About</Link>
           <Link to='/country-info' className='link'>Search Country</Link>
+          <Link to='/query' className='link'>Update Preferences</Link>
         </div>
         <div className='login-info'>
           <Link to='/account' className='white'>
