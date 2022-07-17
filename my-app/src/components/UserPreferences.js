@@ -68,7 +68,11 @@ export default function UserPreferences() {
                     let Document = document.data();
                     setTravelType(Document['travelType']);
                     setBudget(Document['budgetType']);
-                    setCategories(Document['categoryTypes']);
+                    console.log(Document['categoryTypes']);
+                    for (var i = 0; i < Document['categoryTypes'].length; i++) {
+                        console.log(Document['categoryTypes'][i]);
+                        setCategories(Document['categoryTypes'][i]);
+                    }
                 })
             }
         }
@@ -115,7 +119,7 @@ export default function UserPreferences() {
                         </label>
                     </div>
                     <div className="prefs-item">
-                        <label for="categories">
+                        <label htmlFor="categories">
                             <div className="prefs-item">
                                 <h3 className="prefs-label">Select Categories:</h3>
                             </div>
