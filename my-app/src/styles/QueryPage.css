@@ -1,0 +1,38 @@
+.header {
+    display: block;
+    margin: 0 auto;
+    padding: 2rem;
+    font-size: 1.25rem;
+    position:relative;
+    line-height:2em;
+    overflow:hidden;
+    text-align: center;
+    width: fit-content;
+}
+
+
+.query-container {
+    width: 60%;
+    font-size: 1.3rem;
+    padding: 1.4rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.query-label {
+    display: inline;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.query-item {
+    margin-bottom: 5px;
+}
+
+.list-item{
+    font-weight: bold;
+}
+
+.space {
+    margin-bottom: 15px !important;
+}

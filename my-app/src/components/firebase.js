@@ -104,6 +104,41 @@ const updateUserPreferences = async (preferences) => {
     }
 }
 
+const checkForPreferences = async () =>{
+    let user = auth.currentUser;
+    let found = false;
+    if(user){
+        const q = query(collection(db,'users'),where('uid','==',user.uid));
+        const qSnapshot = await getDocs(q);
+        qSnapshot.forEach(async (document)=>{
+            let Document = document.data()
+            found = Document['travelType'] != undefined
+            
+        })
+    }
+    return found;
+}
+
+const getPreferences = async () =>{
+    let user = auth.currentUser;
+    let prefs = {}
+    if(user){
+        const q = query(collection(db,'users'),where('uid','==',user.uid));
+        const qSnapshot = await getDocs(q);
+        qSnapshot.forEach(document=>{
+            let Document = document.data();
+            prefs = {
+                travelType:Document['travelType'],
+                budgetType:Document['budgetType'],
+                categoryTypes:Document['categoryTypes']
+            }
+            
+        })
+        
+    }
+    return prefs
+}
+
 const logout = () => {
     signOut(auth);
 };
@@ -116,5 +151,7 @@ export {
     registerWithEmailAndPassword,
     sendPasswordReset,
     logout,
-    updateUserPreferences
+    updateUserPreferences,
+    checkForPreferences,
+    getPreferences
 };

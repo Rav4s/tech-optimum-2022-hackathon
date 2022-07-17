@@ -8,6 +8,7 @@ import Account from "./Account";
 import CountryInfoPage from "./CountryInfoPage";
 import About from "./About";
 import UserPreferences from "./UserPreferences";
+import QueryPage from "./QueryPage";
 
 export default function Router() {
 
@@ -19,9 +20,10 @@ export default function Router() {
                 <Route exact path="/reset" element={<Reset />} />
                 <Route exact path="/dashboard" element={<Dashboard />} />
                 <Route exact path="/account" element={<Account />} />
+                <Route exact path="/customize" element={<UserPreferences/>}/>
+                <Route exact path='/query' element={<QueryPage/>}/>
                 <Route exact path="/country-info" element={<CountryInfoPage />} />
                 <Route exact path="/about" element={<About />} />
-                <Route exact path="/query" element={<UserPreferences/>}/>
             </Routes>
         </>
     );
