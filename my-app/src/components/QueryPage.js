@@ -16,13 +16,13 @@ export default function QueryPage(){
             console.log("available")
         } else{
             console.log("Not Available");
-            alert("Allow Geo Location for Application to work")
+            alert("We need location access to recommend travel options")
             return
         }
         checkForPreferences().then((d)=>{
             console.log(d)
             if(!d){
-                alert("Update Preferences First")
+                alert("Please update preferences first")
                 return
             }
         })
@@ -108,10 +108,10 @@ export default function QueryPage(){
                     </div>
                     <div className="query-item">
                     <label>
-                    <h3 className="query-label">Range: </h3>
+                    <h3 className="query-label">Range (km): </h3>
                         <input type="text" name="keyword" onChange={e=>{
-                            setRange(e.target.value)
-                        }}placeholder="in meters"/>
+                            setRange(e.target.value * 1000)
+                        }}placeholder="in kilometers"/>
                     </label>
                     </div>
                     
