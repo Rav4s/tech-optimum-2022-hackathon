@@ -18,6 +18,11 @@
     margin: 0 auto;
     text-align: center;
 }
+.list{
+    text-align:left;
+    width:60%;
+    margin: 0 auto;
+}
 
 .query-label {
     display: inline;
@@ -47,3 +52,30 @@
 .desc p {
     margin: 0;
 }
+
+.map-Link {
+    text-decoration: none;
+    color:red;
+}
+  
+.map-Link:hover {
+    text-decoration: none;
+    color:red;
+}
+.map-Link:link{
+    color:red;
+  }
+.map-Link:visited{
+color:red;
+}
+.map-Link:hover{
+color:red;
+}
+.map-Link:focus{
+color:red;
+}
+.map-Link:active{
+color:red;
+}
+
+

@@ -50,7 +50,7 @@ export default function QueryPage(){
                             <dl className="list">
                                 {dat.map(d=>{
                                     return(<>
-                                    <dt className="list-item" style={{"font-weight": "bold"}}><a href={makeLink(d.point.lat, d.point.lon)}>{d.name}</a></dt>
+                                    <dt className="list-item" style={{"font-weight": "bold"}}> • <a className='map-Link' href={makeLink(d.point.lat, d.point.lon)}>{d.name}</a></dt>
                                     </>)
                                 })}
                             </dl>
@@ -69,7 +69,7 @@ export default function QueryPage(){
                                 <dl className="list">
                                     {dat.map(d=>{
                                         return(<>
-                                        <dt className="list-item" style={{"font-weight": "bold"}}><a href={makeLink(d.point.lat, d.point.lon)}>{d.name}</a> </dt>
+                                        <dt className="list-item" style={{"font-weight": "bold"}}><a className='mapLink' href={makeLink(d.point.lat, d.point.lon)}>{d.name}</a> </dt>
                                         </>)
                                     })}
                                 </dl>
@@ -122,6 +122,7 @@ export default function QueryPage(){
                 </form>
 
             </div>
+            <br/>
             {list}
             
         </div>
