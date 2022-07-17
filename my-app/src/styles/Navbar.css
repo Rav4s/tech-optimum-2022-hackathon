@@ -60,6 +60,7 @@
     padding: 4px;
     border: 3px solid #ff1361;
     border-radius: 7px;
+    margin-left: 15px;
     background-color: transparent;
     transition-duration: .3s;
     transition-timing-function: ease-in-out;
@@ -70,6 +71,7 @@
     background-color: #ff13624f;
     transition-duration: .3s;
     transition-timing-function: ease-in-out;
+    margin-left: 15px;
 }
 
 .login-info {

@@ -11,7 +11,7 @@ import {
     signOut
 } from "firebase/auth";
 
-import { getFirestore, query, getDocs, collection, where, addDoc, setDoc, doc} from "firebase/firestore";
+import { getFirestore, query, getDocs, collection, where, addDoc, setDoc, doc } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -90,25 +90,25 @@ const sendPasswordReset = async (email) => {
 
 const updateUserPreferences = async (preferences) => {
     var user = auth.currentUser;
-    if(user){
-        const q = query(collection(db,'users'),where('uid','==',user.uid));
+    if (user) {
+        const q = query(collection(db, 'users'), where('uid', '==', user.uid));
         const qSnapshot = await getDocs(q);
-        qSnapshot.forEach(async (document)=>{
+        qSnapshot.forEach(async (document) => {
             let Document = document.data()
             Document['travelType'] = preferences.travelType
             Document['budgetType'] = preferences.budgetType;
             Document['categoryTypes'] = preferences.categoryTypes
             console.log(Document)
-            await setDoc(doc(db,'users',document.id),Document)
+            await setDoc(doc(db, 'users', document.id), Document)
         })
     }
 }
 
 const logout = () => {
     signOut(auth);
-  };
+};
 
-  export {
+export {
     auth,
     db,
     signInWithGoogle,
@@ -117,4 +117,4 @@ const logout = () => {
     sendPasswordReset,
     logout,
     updateUserPreferences
-  };
+};
