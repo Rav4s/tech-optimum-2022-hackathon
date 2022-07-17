@@ -12,8 +12,13 @@ function CountryInfoPage(){
     const [coordinates, setCoordinates] = useState("");
     // const [currencies, setCurrencies] = useState("");
     return (
-        <div className="everything">
-            <h1 className='header'>Get Info About a Country!</h1>
+        <div className="dashboard">
+            <div className="header">
+                <h1>Get info about a country!</h1>
+            </div>
+            <div className="desc">
+                <p>Enter the name of any country in the world to learn more about its features and culture. This will be immensely useful when planning your trips!</p>
+            </div>
             <div className="input-area">
                 <input
                     type="text"
