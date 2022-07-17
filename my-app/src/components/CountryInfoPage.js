@@ -53,10 +53,10 @@ function CountryInfoPage(){
                     {/* <li>Currencies in {countryName}: {temp.map(curr => (
                         <li key={curr}>{curr}</li>
                     ))}</li> */}
-                    <li>Capital city of {countryName}: {capitalCity}</li>
+                    <li>The capital city of {countryName} is: {capitalCity}</li>
                     <li>{countryName} is located in the region of {region}</li>
-                    <li>{countryName} speaks {languages.map((lang) => (<span key={lang}>{lang}, </span>))}</li>
-                    <li>{countryName} is located at latitude: {coordinates[0]} and longitude {coordinates[1]}</li>
+                    <li>People in {countryName} speak {languages.map((lang) => (<span key={lang}>{lang}, </span>))}</li>
+                    <li>{countryName} is located at latitude {coordinates[0]} and longitude {coordinates[1]}</li>
                 </ul>
             </div>
         </div>
