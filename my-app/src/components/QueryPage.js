@@ -10,6 +10,10 @@ export default function QueryPage(){
     const [range, setRange] = React.useState(0)
     const [list, setList] = React.useState(<div/>)
 
+    function makeLink(lat, long) {
+        return "https://www.google.com/maps/search/?api=1&query=" + lat + "," + long;
+    }
+
     function handleOnClick(e){
         e.preventDefault();
         if("geolocation" in navigator){
@@ -46,8 +50,7 @@ export default function QueryPage(){
                             <dl className="list">
                                 {dat.map(d=>{
                                     return(<>
-                                    <dt className="list-item" style={{"font-weight": "bold"}}>{d.name} </dt>
-                                    <dd> - Longitude: {d.point.lon}, Latitude: {d.point.lat}</dd>
+                                    <dt className="list-item" style={{"font-weight": "bold"}}><a href={makeLink(d.point.lat, d.point.lon)}>{d.name}</a></dt>
                                     </>)
                                 })}
                             </dl>
@@ -66,8 +69,7 @@ export default function QueryPage(){
                                 <dl className="list">
                                     {dat.map(d=>{
                                         return(<>
-                                        <dt className="list-item" style={{"font-weight": "bold"}}>{d.name} </dt>
-                                        <dd> - Longitude: {d.point.lon}, Latitude: {d.point.lat}</dd>
+                                        <dt className="list-item" style={{"font-weight": "bold"}}><a href={makeLink(d.point.lat, d.point.lon)}>{d.name}</a> </dt>
                                         </>)
                                     })}
                                 </dl>
@@ -86,9 +88,9 @@ export default function QueryPage(){
     return(
         <div className="query-container">
             <div>
-            <h1 className="header">
-                Search for Destinations!
-            </h1>
+            <div className="header">
+                <h1>Search for Destinations!</h1>
+            </div>
             </div>
             
             <h3>
