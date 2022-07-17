@@ -99,6 +99,9 @@ export default function UserPreferences() {
                 <div className="header">
                     <h1>User Preferences</h1>
                 </div>
+                <div className="desc">
+                    <p>This is where we get to know all about your travel preferences, in order to suggest the best destinations for you.</p>
+                </div>
                 <form onSubmit={handleSubmit}>
                     <div className="prefs-item">
                         <label>
