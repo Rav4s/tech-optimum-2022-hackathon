@@ -35,6 +35,7 @@ function NavBar() {
           <img className='logo-image' src='/img/NavLogo.png' alt='Nexus logo - world map' />
         </div>
         <div className='NavLinks'>
+          <Link to='/query' className='link'>Preferences</Link>
           <Link to='/about' className='link'>About</Link>
           <Link to='/country-info' className='link'>Search Country</Link>
           <Link to='/query' className='link'>Update Preferences</Link>
