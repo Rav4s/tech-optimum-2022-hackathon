@@ -3,7 +3,25 @@
     margin: auto;
     text-align: center;
     width:100%;
+    list-style-position: inside;
+
 }
 .input-area {
-    
+
+}
+
+.search-button {
+    background-color:rgb(32, 32, 33);
+    color:aliceblue;
+    transition-property: background-color, color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.search-button:hover {
+    transition-property: background-color, color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+    background-color:rgb(163, 81, 18);
+    color:aliceblue;
 }
