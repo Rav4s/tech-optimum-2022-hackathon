@@ -25,6 +25,7 @@ export default function QueryPage(){
                 return
             }
         })
+        setList(<h1>Loading...</h1>)
         getPreferences().then(d=>{
             console.log(d)
             let categoryParam = ""
@@ -37,14 +38,14 @@ export default function QueryPage(){
                 categoryParam = d.categoryTypes[0]
             }
             navigator.geolocation.getCurrentPosition(function(pos){
-            
+               
                 autoSuggestPlace(keyword,10000000,pos.coords.longitude,pos.coords.latitude,categoryParam).then(dat=>{
                     if(dat.length > 0){
                         setList(
                             <dl className="list">
                                 {dat.map(d=>{
                                     return(<>
-                                    <dt className="list-item">{d.name} style={{"font-weight": "bold"}}</dt>
+                                    <dt className="list-item" style={{"font-weight": "bold"}}>{d.name} </dt>
                                     <dd> - Longitude: {d.point.lon}, Latitude: {d.point.lat}</dd>
                                     </>)
                                 })}
