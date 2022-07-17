@@ -167,6 +167,9 @@ export default function UserPreferences() {
                 <div className="user-pref-status">
                     User preferences last updated on mm/dd/yyyy: {x.getMonth() + 1}/{x.getDate()}/{x.getFullYear()} at {x.getHours() + 1}: {x.getMinutes()}.{x.getSeconds()}
                 </div>
+                <div className="reminder">
+                    Don't forget to press submit!
+                </div>
             </div>
         </>
     )

@@ -43,3 +43,7 @@
 .desc p {
     margin: 0;
 }
+
+.reminder {
+    font-size: smaller;
+}
