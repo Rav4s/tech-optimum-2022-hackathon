@@ -16,7 +16,7 @@ export async function getCoordinates(countryName) {
 //returns an array of all currencies given a country name
 export async function getCurrency(countryName) {
     let data = await getDataByName(countryName);
-    return Object.values(data[0].currencies);
+    return Object.values(data[0].currencies.name);
 }
 
 //returns an array with languages used
