@@ -5,4 +5,6 @@ This is our 2022 Tech Optimum Hackathon Project. We created and founded the *Nex
 Try out our app at https://nexustravel.xyz.
 All code is public, so feel free to take a look around.
 
+Youtube Demonstration Link: https://www.youtube.com/watch?v=3g14HmoC_hI
+
 Constructed with ❤️ by Ravi Shah, Reet Sinha, Jadon Lee, Alex Bui, and Samarth Bikki for the Tech Optimum Hackathon 2022
